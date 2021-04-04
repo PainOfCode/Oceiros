@@ -1,0 +1,2821 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gfycat.Net</name>
+    </assembly>
+    <members>
+        <member name="T:Gfycat.Album">
+            <summary>
+            Represents a user album on Gfycat
+            </summary>
+        </member>
+        <member name="P:Gfycat.Album.Title">
+            <summary>
+            Gets the title of this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.Album.Count">
+            <summary>
+            Gets the number of <see cref="T:Gfycat.Gfy"/>s in this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.Album.Content">
+            <summary>
+            Gets the <see cref="T:Gfycat.Gfy"/>s in this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.Album.CoverImageUrl">
+            <summary>
+            Gets the cover image this album uses on gfycat.com
+            </summary>
+        </member>
+        <member name="P:Gfycat.Album.CoverImageUrlMobile">
+            <summary>
+            Gets the mobile cover image this album uses on gfycat.com
+            </summary>
+        </member>
+        <member name="P:Gfycat.Album.NsfwSetting">
+            <summary>
+            Gets the current NSFW (Not Safe For Work) setting
+            </summary>
+        </member>
+        <member name="P:Gfycat.Album.Published">
+            <summary>
+            Gets the current published setting. If true, the album is public
+            </summary>
+        </member>
+        <member name="M:Gfycat.Album.ModifyTitleAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Changes the title of the album on Gfycat to the specified string
+            </summary>
+            <param name="newTitle"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Album.ModifyNsfwSettingAsync(Gfycat.NsfwSetting,Gfycat.RequestOptions)">
+            <summary>
+            Changes the NSFW (Not Safe For Work) setting of the album on Gfycat to the specified setting
+            </summary>
+            <param name="newSetting"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Album.ModifyPublishSettingAsync(System.Boolean,Gfycat.RequestOptions)">
+            <summary>
+            Changes the published setting of the album on Gfycat to the specified setting
+            </summary>
+            <param name="published"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Album.AddGfysAsync(System.Collections.Generic.IEnumerable{Gfycat.Gfy},Gfycat.RequestOptions)">
+            <summary>
+            Adds the specified <see cref="T:Gfycat.Gfy"/>s to the album on Gfycat
+            </summary>
+            <param name="gfysToAdd"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Album.MoveGfysAsync(Gfycat.Album,System.Collections.Generic.IEnumerable{Gfycat.Gfy},Gfycat.RequestOptions)">
+            <summary>
+            Moves the specified <see cref="T:Gfycat.Gfy"/>s to the specified album on Gfycat
+            </summary>
+            <param name="folderToMoveTo"></param>
+            <param name="gfysToMove"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Album.RemoveGfysAsync(System.Collections.Generic.IEnumerable{Gfycat.Gfy},Gfycat.RequestOptions)">
+            <summary>
+            Removes the specified <see cref="T:Gfycat.Gfy"/>s from the album on Gfycat
+            </summary>
+            <param name="gfysToRemove"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Album.DeleteAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes the album on Gfycat
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Album.UpdateAsync(Gfycat.RequestOptions)">
+            <summary>
+            Updates this object with the data on Gfycat
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.AlbumFolder">
+            <summary>
+            Represents a folder of albums
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumFolder.Title">
+            <summary>
+            Gets the title of this Gfycat folder
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumFolder.Subfolders">
+            <summary>
+            Gets all folders inside this folder
+            </summary>
+        </member>
+        <member name="M:Gfycat.AlbumFolder.MoveFolderAsync(Gfycat.IAlbumInfo,Gfycat.RequestOptions)">
+            <summary>
+            Moves this album to another location in the folder tree
+            </summary>
+            <param name="parent"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.AlbumFolder.CreateNewAlbumAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Creates a new album inside of this folder
+            </summary>
+            <param name="name"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.AlbumFolder.CreateNewFolderAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Creates a new album folder inside of this folder
+            </summary>
+            <param name="name"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.AlbumFolder.ModifyTitleAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Changes the title of this folder to the provided string
+            </summary>
+            <param name="newTitle"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.AlbumFolder.DeleteAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes this folder on Gfycat
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.AlbumInfo">
+            <summary>
+            Represents an album's basic information
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.Title">
+            <summary>
+            Gets the title of this Gfycat folder
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.Subfolders">
+            <summary>
+            Gets all folders inside this folder
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.Published">
+            <summary>
+            Gets whether this album is published or not
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.CoverImageUrl">
+            <summary>
+            Gets the cover image url for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.CoverImageUrlMobile">
+            <summary>
+            Gets the mobile cover image url for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.Mp4Url">
+            <summary>
+            Gets the mp4 url for the cover gfy for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.WebmUrl">
+            <summary>
+            Gets the webm url for the cover gfy for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.WebpUrl">
+            <summary>
+            Gets the webp url for the cover gfy for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.GifUrl">
+            <summary>
+            Gets the gif url for the cover gfy for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.MobileUrl">
+            <summary>
+            Gets the mobile url for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.MobilePosterUrl">
+            <summary>
+            Gets the mobile poster url for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.PosterUrl">
+            <summary>
+            Gets the poster url for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.Thumb360Url">
+            <summary>
+            Gets the 360mb thumbnail url for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.Thumb360PosterUrl">
+            <summary>
+            Gets the 360mb thumbnail poster url for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.Thumb100PosterUrl">
+            <summary>
+            Gets the 100mb thumbnail poster url for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.Max5MbGif">
+            <summary>
+            Gets the max 5mb gif url
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.Max2MbGif">
+            <summary>
+            Gets the max 2mb gif url
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.MjpgUrl">
+            <summary>
+            Gets the mjpg url for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.MiniUrl">
+            <summary>
+            Gets the mini url for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.MiniPosterUrl">
+            <summary>
+            Gets the mini poster url for this album
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.Width">
+            <summary>
+            Gets the width of this album's cover gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.AlbumInfo.Height">
+            <summary>
+            Gets the height of this album's cover gfy
+            </summary>
+        </member>
+        <member name="M:Gfycat.AlbumInfo.GetContentsAsync(Gfycat.RequestOptions)">
+            <summary>
+            Gets the contents of this album
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.AlbumInfo.MoveFolderAsync(Gfycat.IAlbumInfo,Gfycat.RequestOptions)">
+            <summary>
+            Moves this album to another location in the folder tree
+            </summary>
+            <param name="parent"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.AlbumInfo.CreateNewFolderAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Creates a new album folder inside this album
+            </summary>
+            <param name="folderName"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.AlbumInfo.CreateNewAlbumAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Creates a new album inside this album
+            </summary>
+            <param name="albumName"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.AlbumInfo.ModifyTitleAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Changes the title of this folder to the provided string
+            </summary>
+            <param name="newTitle"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.AlbumInfo.DeleteAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes this folder on Gfycat
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.API.ClientAccountAuthResponse">
+            <summary>
+            Represents a response using a password grant authentication
+            </summary>
+        </member>
+        <member name="T:Gfycat.API.ClientCredentialsAuthResponse">
+            <summary>
+            Represents an authentication response using client credentials
+            </summary>
+        </member>
+        <member name="T:Gfycat.AppApiInfo">
+            <summary>
+            Represents an developer key's app information
+            </summary>
+        </member>
+        <member name="P:Gfycat.AppApiInfo.ContactName">
+            <summary>
+            Gets the contact name for this app
+            </summary>
+        </member>
+        <member name="P:Gfycat.AppApiInfo.WebUrl">
+            <summary>
+            Gets a url for this app
+            </summary>
+        </member>
+        <member name="P:Gfycat.AppApiInfo.Company">
+            <summary>
+            Gets the company of this app
+            </summary>
+        </member>
+        <member name="P:Gfycat.AppApiInfo.CreationDate">
+            <summary>
+            Gets the creation date of this app
+            </summary>
+        </member>
+        <member name="P:Gfycat.AppApiInfo.AppName">
+            <summary>
+            Gets the name of this app
+            </summary>
+        </member>
+        <member name="P:Gfycat.AppApiInfo.RedirectUris">
+            <summary>
+            Gets the redirect uris of this app
+            </summary>
+        </member>
+        <member name="P:Gfycat.AppApiInfo.AppType">
+            <summary>
+            Gets the type of this app
+            </summary>
+        </member>
+        <member name="P:Gfycat.AppApiInfo.Username">
+            <summary>
+            Gets the username of the account which owns this app
+            </summary>
+        </member>
+        <member name="P:Gfycat.AppApiInfo.Email">
+            <summary>
+            Gets the email of the account which owns this app
+            </summary>
+        </member>
+        <member name="T:Gfycat.BookmarkFolder">
+            <summary>
+            Represents a bookmark folder including content
+            </summary>
+        </member>
+        <member name="P:Gfycat.BookmarkFolder.Title">
+            <summary>
+            Gets the title of this bookmark folder
+            </summary>
+        </member>
+        <member name="P:Gfycat.BookmarkFolder.Count">
+            <summary>
+            Gets the number of gfys in this bookmark folder
+            </summary>
+        </member>
+        <member name="P:Gfycat.BookmarkFolder.Content">
+            <summary>
+            Gets the content of this bookmark folder
+            </summary>
+        </member>
+        <member name="M:Gfycat.BookmarkFolder.ModifyTitleAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Modifies the title of this gfy to the new value
+            </summary>
+            <param name="newTitle"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.BookmarkFolder.MoveGfysAsync(Gfycat.BookmarkFolder,System.Collections.Generic.IEnumerable{Gfycat.Gfy},Gfycat.RequestOptions)">
+            <summary>
+            Moves the specified gfys to another bookmark folder
+            </summary>
+            <param name="folderToMoveTo"></param>
+            <param name="gfysToMove"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.BookmarkFolder.DeleteAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes this bookmark folder on Gfycat
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.BookmarkFolder.UpdateAsync(Gfycat.RequestOptions)">
+            <summary>
+            Updates this bookmark folder using the latest info from the server
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.BookmarkFolderInfo">
+            <summary>
+            Represents a bookmark folder's basic info
+            </summary>
+        </member>
+        <member name="P:Gfycat.BookmarkFolderInfo.Title">
+            <summary>
+            Gets the title of this Gfycat folder
+            </summary>
+        </member>
+        <member name="P:Gfycat.BookmarkFolderInfo.Subfolders">
+            <summary>
+            Gets all folders inside this folder
+            </summary>
+        </member>
+        <member name="M:Gfycat.BookmarkFolderInfo.GetContentsAsync(Gfycat.RequestOptions)">
+            <summary>
+            Gets the contents of this album
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.BookmarkFolderInfo.MoveFolderAsync(Gfycat.BookmarkFolderInfo,Gfycat.RequestOptions)">
+            <summary>
+            Moves this album to another location in the folder tree
+            </summary>
+            <param name="parent"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.BookmarkFolderInfo.CreateNewFolderAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Creates a new folder inside of this folder
+            </summary>
+            <param name="folderName"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.BookmarkFolderInfo.ModifyTitleAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Changes the title of this folder to the provided string
+            </summary>
+            <param name="newTitle"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.BookmarkFolderInfo.DeleteAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes this folder on Gfycat
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.CurrentUser">
+            <summary>
+            Represents the current login user on Gfycat
+            </summary>
+        </member>
+        <member name="M:Gfycat.CurrentUser.UpdateAsync(Gfycat.RequestOptions)">
+            <summary>
+            Updates this object with the latest server information
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="P:Gfycat.CurrentUser.Username">
+            <summary>
+            The username of this user
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.Description">
+            <summary>
+            The description of this user
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.ProfileUrl">
+            <summary>
+            Gets the URL provided on the user's profile
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.Name">
+            <summary>
+            Gets this user's name provided on their profile
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.Views">
+            <summary>
+            Gets the total number of Gfy views this user has recieved
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.EmailVerified">
+            <summary>
+            Gets whether this user's email is verified
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.Url">
+            <summary>
+            Gets a browser friendly URL to this user's profile
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.CreationDate">
+            <summary>
+            Gets the date and time of this user's account creation
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.ProfileImageUrl">
+            <summary>
+            Gets this user's profile image url
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.Verified">
+            <summary>
+            Gets whether this user is verified
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.Followers">
+            <summary>
+            Gets the number of users following this user
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.Following">
+            <summary>
+            Gets the number of users this user is following
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.IframeProfileImageVisible">
+            <summary>
+            Gets the user’s profile image visibility on the iframe
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.GeoWhitelist">
+            <summary>
+            The user’s geo whitelist on Gfycat
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.DomainWhitelist">
+            <summary>
+            The user’s domain whitelist on Gfycat
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.Email">
+            <summary>
+            The email address of the specified user
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.UploadNotices">
+            <summary>
+            The whether the user recieves upload notices when a gfy has finished uploading
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.PublishedGfys">
+            <summary>
+            Gets the number of Gfys this user has published on their account
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.PublishedAlbums">
+            <summary>
+            Gets the number of albums this user had published on their account
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.TotalGfys">
+            <summary>
+            Gets the number of gfys this user has on their account
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.TotalBookmarks">
+            <summary>
+            Gets the number of gfys this user has bookmarked on their account
+            </summary>
+        </member>
+        <member name="P:Gfycat.CurrentUser.TotalAlbums">
+            <summary>
+            Gets the number of albums this user has on their account
+            </summary>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetEmailVerifiedAsync(Gfycat.RequestOptions)">
+            <summary>
+            Gets whether the current user's email is verified
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns>True if the current user's email is verified, otherwise false</returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.SendVerificationEmailAsync(Gfycat.RequestOptions)">
+            <summary>
+            Sends a verification email to the current user's email address
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.UploadProfilePictureAsync(System.IO.Stream,Gfycat.RequestOptions)">
+            <summary>
+            Modifies the current user's profile pic
+            </summary>
+            <param name="profilePic"></param>
+            <param name="options">The options for this request</param>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetProfilePictureUploadStatusAsync(Gfycat.RequestOptions)">
+            <summary>
+            Gets the status of an uploading profile pic
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Gfycat.CurrentUser.ModifyCurrentUserAsync(System.Collections.Generic.IEnumerable{Gfycat.GfycatOperation},Gfycat.RequestOptions)">
+            <summary>
+            Modifies the current user using the specified operations
+            </summary>
+            <param name="operations"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.ModifyCurrentUserAsync(Gfycat.RequestOptions,Gfycat.GfycatOperation[])">
+            <summary>
+            Modifies the current user using the specified operations
+            </summary>
+            <param name="operations"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetFollowingUsersAsync(Gfycat.RequestOptions)">
+            <summary>
+            Returns an enumerable user ids of the users the current user is following
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetFollowersAsync(Gfycat.RequestOptions)">
+            <summary>
+            Returns an enumerable of users following the current user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetFollowingUsersPopulatedAsync(Gfycat.RequestOptions)">
+            <summary>
+            Returns an enumerable of the users the current user is following
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetFollowersPopulatedAsync(Gfycat.RequestOptions)">
+            <summary>
+            Returns an enumerable of the users following the current user
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetGfyFeedAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Gets the current user's private gfy feed
+            </summary>
+            <param name="count"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetTimelineFeedAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Returns a timeline list of all published gfys in the users this user follows
+            </summary>
+            <param name="count"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetFoldersAsync(Gfycat.RequestOptions)">
+            <summary>
+            Retrieves a list of folder information for the current user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.CreateFolderAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Creates a folder for the current user using the specified name with a parent if specified
+            </summary>
+            <param name="folderName"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetBookmarkFoldersAsync(Gfycat.RequestOptions)">
+            <summary>
+            Gets a collection of all bookmark folders of the current user
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetAlbumsAsync(Gfycat.RequestOptions)">
+            <summary>
+            Get all album information for the current user
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.SearchAsync(System.String,System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Searches the current user's gfys
+            </summary>
+            <param name="count"></param>
+            <param name="searchText"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.AddTwitterProviderAsync(System.String,System.String,Gfycat.RequestOptions)">
+            <summary>
+            Adds a twitter provider to this account using the specified verifier and token
+            </summary>
+            <param name="verifier"></param>
+            <param name="token"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.RemoveTwitterProviderAsync(Gfycat.RequestOptions)">
+            <summary>
+            Removes the current user's twitter provider
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetDomainWhitelistAsync(Gfycat.RequestOptions)">
+            <summary>
+            Gets the whitelist of domains allowed to embed this user's content
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.ModifyDomainWhitelistAsync(System.Collections.Generic.IEnumerable{System.String},Gfycat.RequestOptions)">
+            <summary>
+            Changes the whitelist of domains allowed to embed this user's content to the new whitelist
+            </summary>
+            <param name="newWhitelist"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.DeleteDomainWhitelistAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes the whitelist of domains allowed to embed this user's content
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetGeoWhitelistAsync(Gfycat.RequestOptions)">
+            <summary>
+            Gets the whitelist of regions allowed to embed this user's content
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.ModifyGeoWhitelistAsync(System.Collections.Generic.IEnumerable{System.Globalization.RegionInfo},Gfycat.RequestOptions)">
+            <summary>
+            Changes the whitelist of regions allowed to embed this user's content to the new whitelist
+            </summary>
+            <param name="newWhitelist"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.DeleteGeoWhitelistAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes the whitelist of regions allowed to embed this user's content
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.GetApiCredentialsAsync(Gfycat.RequestOptions)">
+            <summary>
+            Fetches the developer keys for the current user
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.Gfycat#IUser#FollowAsync(Gfycat.RequestOptions)">
+            <summary>
+            Follows this user
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.Gfycat#IUser#UnfollowAsync(Gfycat.RequestOptions)">
+            <summary>
+            Unfollows this user
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUser.Gfycat#IUser#GetFollowingUser(Gfycat.RequestOptions)">
+            <summary>
+            Gets whether the current user is following this user
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUserGfyFeed.GetEnumerator">
+            <summary>
+            Returns an enumerator to enumerate through this feed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUserGfyFeed.GetNextPageAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Returns the next page of this feed
+            </summary>
+            <param name="count"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUserSearchFeed.GetEnumerator">
+            <summary>
+            Returns an enumerator to enumerate through this feed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUserSearchFeed.GetNextPageAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Returns the next page of this feed
+            </summary>
+            <param name="count"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUserTimelineFeed.GetEnumerator">
+            <summary>
+            Returns an enumerator to enumerate through this feed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.CurrentUserTimelineFeed.GetNextPageAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Returns the next page of this feed
+            </summary>
+            <param name="count"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.Entity">
+            <summary>
+            Exposes the GfycatClient to objects
+            </summary>
+        </member>
+        <member name="P:Gfycat.Entity.Id">
+            <summary>
+            Gets the id of this entity
+            </summary>
+        </member>
+        <member name="T:Gfycat.FeedEnumerator`1">
+            <summary>
+            Enumerates the contents of an <see cref="T:Gfycat.IFeed`1"/>
+            </summary>
+            <typeparam name="T">The type of item to enumerate</typeparam>
+        </member>
+        <member name="P:Gfycat.FeedEnumerator`1.Current">
+            <summary>
+            Gets the element in the collection at the current position of the enumerator
+            </summary>
+        </member>
+        <member name="P:Gfycat.FeedEnumerator`1.RequestCount">
+            <summary>
+            Defines the number of gfys to get with each request
+            </summary>
+        </member>
+        <member name="M:Gfycat.FeedEnumerator`1.MoveNext(System.Threading.CancellationToken)">
+            <summary>
+            Attempts to move to the next item in the current page of content. If there is no content in the current page, it retrieves the next page and returns the result of that content's move next
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.FeedEnumerator`1.Dispose(System.Boolean)">
+            <summary>
+            Disposes teh current feed's content enumerator
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Gfycat.FeedEnumerator`1.Dispose">
+            <summary>
+            Disposes the current feed's content enumerator
+            </summary>
+        </member>
+        <member name="T:Gfycat.Folder">
+            <summary>
+            Represents a gfy folder on the current user's account
+            </summary>
+        </member>
+        <member name="P:Gfycat.Folder.Title">
+            <summary>
+            Gets the title of this Gfycat folder
+            </summary>
+        </member>
+        <member name="P:Gfycat.Folder.Count">
+            <summary>
+            The number of <see cref="T:Gfycat.Gfy"/>s in this folder
+            </summary>
+        </member>
+        <member name="P:Gfycat.Folder.Content">
+            <summary>
+            Gets the content of this folder
+            </summary>
+        </member>
+        <member name="M:Gfycat.Folder.UpdateAsync(Gfycat.RequestOptions)">
+            <summary>
+            Updates this folder with the most recent server information
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Folder.ModifyTitleAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Changes the title of this folder to the provided string
+            </summary>
+            <param name="newTitle"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Folder.MoveGfysAsync(Gfycat.Folder,System.Collections.Generic.IEnumerable{Gfycat.Gfy},Gfycat.RequestOptions)">
+            <summary>
+            Move some of the gfycats within a folder to another folder
+            </summary>
+            <param name="folderToMoveTo"></param>
+            <param name="gfysToMove"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Folder.DeleteAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes this folder on Gfycat
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.FolderExtensions">
+            <summary>
+            Defines extension methods to help with Gfycat folders
+            </summary>
+        </member>
+        <member name="M:Gfycat.FolderExtensions.Flatten``1(``0)">
+            <summary>
+            Flattens a Gfycat folder tree into one enumerable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="folderInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.FolderInfo">
+            <summary>
+            Represents a folder's basic info
+            </summary>
+        </member>
+        <member name="P:Gfycat.FolderInfo.Title">
+            <summary>
+            Gets the title of this Gfycat folder
+            </summary>
+        </member>
+        <member name="P:Gfycat.FolderInfo.Subfolders">
+            <summary>
+            Gets all folders inside this folder
+            </summary>
+        </member>
+        <member name="M:Gfycat.FolderInfo.GetContentsAsync(Gfycat.RequestOptions)">
+            <summary>
+            Gets the contents of this album
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.FolderInfo.MoveFolderAsync(Gfycat.FolderInfo,Gfycat.RequestOptions)">
+            <summary>
+            Moves this album to another location in the folder tree
+            </summary>
+            <param name="parent"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.FolderInfo.CreateNewFolderAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Creates a new folder inside of this folder
+            </summary>
+            <param name="folderName"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.FolderInfo.ModifyTitleAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Changes the title of this folder to the provided string
+            </summary>
+            <param name="newTitle"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.FolderInfo.DeleteAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes this folder on Gfycat
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Gfycat.GfyFormat.Mp4">
+            <summary>
+            Recommended for mobile. Ensures a wide compatibility with various smartphones and is the most efficient file to access over a mobile network or WiFi connection. Restrictions: 640px max width, 10-30fps framerate.
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfyFormat.MobileMp4">
+            <summary>
+            Recommended for mobile. Ensures a wide compatibility with various smartphones and is the most efficient file to access over a mobile network or WiFi connection. Restrictions: 320px max width, 10-30fps framerate.
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfyFormat.MiniMp4">
+            <summary>
+            Half the size of .mp4. Used in Gfycat Loops and other GIF keyboard apps. Restrictions: 360px width, 202px height
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfyFormat.Thumb360">
+            <summary>
+            Source video is scaled and cropped to specific dimensions so that the entire area is filled with content. This format is used for the Gfycat frontpage thumbnails. Restrictions: 360px width, 202px height
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfyFormat.ReverseMp4">
+            <summary>
+            Same as <see cref="F:Gfycat.GfyFormat.Mp4"/> and <see cref="F:Gfycat.GfyFormat.MobileMp4"/> but reversed. Restrictions: 640px max width, 10-30fps framerate.
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfyFormat.Webm">
+            <summary>
+            WEBM is a video format created by Google specifically for internet streaming with slightly lower quality than MP4 but better compression. If a WEBM file is uploaded to Gfycat without any additional modifications, it will not be re-encoded. Restrictions: None.
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfyFormat.Webp">
+            <summary>
+            Newer video format recommended by Google as a GIF replacement. Good decoding support on many Android devices. Restrictions: 520px max width, 10fps framerate.
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfyFormat.Mjpg">
+            <summary>
+            Higher quality than .mp4 at the expense of file size. MJPEG compression is simpler than other video formats meaning older decoders may support it. Restrictions: 640px width, 15fps framerate.
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfyFormat.Gif">
+            <summary>
+            Not recommended for use since .gif files are typically large, lower color/quality, and may cause users to despair over long download times and high data usage. However, a large number of platforms support it. Restrictions: 14MB max size, unless originally uploaded as a gif.
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfyFormat.SizeRestricted">
+            <summary>
+            This GIF format was designed for sharing on Facebook since its restrictions allow the GIF to be autoplayed within Facebook. Restrictions: 5mb max size, min 250px per side
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfyFormat.Max14mb">
+            <summary>
+            This GIF format was designed for autoplay on Twitter. Restrictions: 14mb max size
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfyFormat.Small">
+            <summary>
+            This GIF format was designed for autoplay on Tumblr. Restrictions: 2MB max size
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfyFormat.Max1mb">
+            <summary>
+            This GIF format was designed for autoplay on WeChat. Restrictions: 1MB max size
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfyFormat.Max100pxWidth">
+            <summary>
+            This GIF format was designed for use in Tango and other text messaging apps. Restrictions: 100px max width
+            </summary>
+        </member>
+        <member name="T:Gfycat.Gfy">
+            <summary>
+            An object representation of a short, looped, soundless video moment
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Url">
+            <summary>
+            Gets the share page URL for this Gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.WebmUrl">
+            <summary>
+            Gets the webm url for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.GifUrl">
+            <summary>
+            Gets the gif url for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.MobileUrl">
+            <summary>
+            Gets the mobile url for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.ReverseMp4Url">
+            <summary>
+            Gets the reversed mp4 url for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.MobilePosterUrl">
+            <summary>
+            Gets the mobile cover image for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.PosterUrl">
+            <summary>
+            Gets the cover image for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Thumb360Url">
+            <summary>
+            Gets the 360mb thumbnail url for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Thumb360PosterUrl">
+            <summary>
+            Gets the 360mb thumbnail cover url for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Thumb100PosterUrl">
+            <summary>
+            Gets the 100mb thumbnail cover url for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Max5MbGif">
+            <summary>
+            Gets the 5mb gif url for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Max2MbGif">
+            <summary>
+            Gets the 2mb gif url for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Max1MbGif">
+            <summary>
+            Gets the 1mb gif url for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.MjpgUrl">
+            <summary>
+            Gets the mjpg url for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Width">
+            <summary>
+            Gets the width of the cover image for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Height">
+            <summary>
+            Gets the height of the cover image for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.AverageColor">
+            <summary>
+            Gets the average color for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.FrameRate">
+            <summary>
+            Gets the framerate for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.NumberOfFrames">
+            <summary>
+            Gets the number of frames for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Mp4Size">
+            <summary>
+            Gets the size of the mp4 version of this gfy in megabytes
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.WebmSize">
+            <summary>
+            Gets the size of the webm version of this gfy in megabytes
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.GifSize">
+            <summary>
+            Gets the size of the gif version of this gfy in megabytes
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.CreationDate">
+            <summary>
+            Gets the creation date of this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Nsfw">
+            <summary>
+            Gets the current nsfw setting of this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Mp4Url">
+            <summary>
+            Gets the mp4 url of this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.WebpUrl">
+            <summary>
+            Gets the webp url for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Likes">
+            <summary>
+            Gets the number of likes for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Published">
+            <summary>
+            Gets whether this gfy is publicly available
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Dislikes">
+            <summary>
+            Gets the number of dislikes for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Md5">
+            <summary>
+            Gets the md5 hash of this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Views">
+            <summary>
+            Gets the number of view for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Tags">
+            <summary>
+            Gets the tags of this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.UserTags">
+            <summary>
+            Gets the user defined tags for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Username">
+            <summary>
+            Gets the username of the owner of this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Name">
+            <summary>
+            Gets the randomly generated URL name for this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Title">
+            <summary>
+            Gets the title of this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Description">
+            <summary>
+            Gets the description of this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.Subreddit">
+            <summary>
+            Gets the subreddit this gfy came from
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.DomainWhitelist">
+            <summary>
+            Gets the whitelist of domains allowed to embed this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.LikedByCurrentUser">
+            <summary>
+            Gets whether this gfy is liked by the current user
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.DislikedByCurrentUser">
+            <summary>
+            Gets whether this gfy is disliked by the current user
+            </summary>
+        </member>
+        <member name="P:Gfycat.Gfy.BookmarkedByCurrentUser">
+            <summary>
+            Gets whether this gfy is bookmarked by the current user
+            </summary>
+        </member>
+        <member name="M:Gfycat.Gfy.ShareOnTwitterAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Shares this gfy on twitter using the specified post status
+            </summary>
+            <param name="postStatus"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.ShareOnTwitterAsync(System.String,System.String,System.String,Gfycat.RequestOptions)">
+            <summary>
+            Shares this gfy on twitter using the specified post status with an account verifier and token
+            </summary>
+            <param name="postStatus"></param>
+            <param name="verifier"></param>
+            <param name="token"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.ModifyTitleAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Modifies the title of this gfy
+            </summary>
+            <param name="newTitle"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.DeleteTitleAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes the title of this gfy
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.ModifyTagsAsync(System.Collections.Generic.IEnumerable{System.String},Gfycat.RequestOptions)">
+            <summary>
+            Edits the tags of this gfy. Tag counts over twenty throw argument exceptions
+            </summary>
+            <param name="tags"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.GetDomainWhitelistAsync(Gfycat.RequestOptions)">
+            <summary>
+            Gets the whitelist of domains allowed to embed this gfy
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.ModifyDomainWhitelistAsync(System.Collections.Generic.IEnumerable{System.String},Gfycat.RequestOptions)">
+            <summary>
+            Changes the whitelist of domains allowed to embed this gfy to the new list
+            </summary>
+            <param name="newWhitelist"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.DeleteDomainWhitelistAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes the whitelist of domains allowed to embed this gfy
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.GetGeoWhitelistAsync(Gfycat.RequestOptions)">
+            <summary>
+            Gets the whitelist of regions allowed to embed this gfy
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.ModifyGeoWhitelistAsync(System.Collections.Generic.IEnumerable{System.Globalization.RegionInfo},Gfycat.RequestOptions)">
+            <summary>
+            Changes the whitelist of regions allowed to embed this gfy to the new list
+            </summary>
+            <param name="newWhitelist"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.DeleteGeoWhitelistAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes the whitelist of regions allowed to embed this gfy
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.ModifyDescriptionAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Modifies the description of this gfy to the new value
+            </summary>
+            <param name="newDescription"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.DeleteDescriptionAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes the description of this gfy
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.ModifyPublishSettingAsync(System.Boolean,Gfycat.RequestOptions)">
+            <summary>
+            Modifies the published setting of this gfy to the new value
+            </summary>
+            <param name="published"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.ModifyNsfwSettingAsync(Gfycat.NsfwSetting,Gfycat.RequestOptions)">
+            <summary>
+            Modifies the NSFW setting of this gfy
+            </summary>
+            <param name="setting"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.DeleteAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes this gfy on Gfycat
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.GetBookmarkStatusAsync(Gfycat.RequestOptions)">
+            <summary>
+            Returns a boolean that says whether or not the current Gfy is or isn't bookmarked
+            </summary>
+            <returns>True if bookmarked, false otherwise</returns>
+        </member>
+        <member name="M:Gfycat.Gfy.BookmarkAsync(Gfycat.BookmarkFolder,Gfycat.RequestOptions)">
+            <summary>
+            Bookmarks this gfy using the specified bookmark folder
+            </summary>
+            <param name="folder"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.UnbookmarkAsync(Gfycat.BookmarkFolder,Gfycat.RequestOptions)">
+            <summary>
+            Unbookmarks this gfy from the specified bookmark folder
+            </summary>
+            <param name="folder"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.UpdateAsync(Gfycat.RequestOptions)">
+            <summary>
+            Updates this gfy's info using the latest data from the server
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.GetUserAsync(Gfycat.RequestOptions)">
+            <summary>
+            Returns the creator of this <see cref="T:Gfycat.Gfy"/>. If it was uploaded or created anonymously, this returns null
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.ModifyLikedSettingAsync(System.Boolean,Gfycat.RequestOptions)">
+            <summary>
+            Changes whether the specified gfy is liked by the current user to the specified boolean
+            </summary>
+            <param name="liked"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.ModifyDislikedSettingAsync(System.Boolean,Gfycat.RequestOptions)">
+            <summary>
+            Changes whether the specified gfy is disliked by the current user to the specified boolean
+            </summary>
+            <param name="disliked"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.ReportContentAsync(Gfycat.RequestOptions)">
+            <summary>
+            Reports this gfy to Gfycat
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Gfy.GetFormatUrl(Gfycat.GfyFormat)">
+            <summary>
+            Gets the url specified by the provided <see cref="T:Gfycat.GfyFormat"/>
+            </summary>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.GfycatClient">
+            <summary>
+            Represents a client for communicating with the Gfycat API
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfycatClient.UseDefaultFeedCount">
+            <summary>
+            Specifies the request for the feed should use the default value defined in the client config or the count used in the creation of this feed
+            </summary>
+        </member>
+        <member name="M:Gfycat.GfycatClient.#ctor(System.String,System.String)">
+            <summary>
+            Creates a <see cref="T:Gfycat.GfycatClient"/> using the provided client ID and client secret
+            </summary>
+            <param name="clientId"></param>
+            <param name="clientSecret"></param>
+        </member>
+        <member name="M:Gfycat.GfycatClient.#ctor(Gfycat.GfycatClientConfig)">
+            <summary>
+            Creates a <see cref="T:Gfycat.GfycatClient"/> using the provided <see cref="T:Gfycat.GfycatClientConfig"/>
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="P:Gfycat.GfycatClient.ClientId">
+            <summary>
+            This client's ID provided during construction
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfycatClient.AccessToken">
+            <summary>
+            The current access token being used for all requests
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfycatClient.RefreshToken">
+            <summary>
+            The current refresh token being used for refreshing the access token when it expires
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfycatClient.CurrentUser">
+            <summary>
+            Gets the object representing the current user
+            </summary>
+        </member>
+        <member name="M:Gfycat.GfycatClient.RefreshTokenAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Attempts to refresh the access token using the current refresh token or with a provided access token. If the current refresh token is null or an refresh token isn't provided, this will perform client credential authentication
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.AuthenticateAsync(Gfycat.RequestOptions)">
+            <summary>
+            Authenticates this instance using client credentials
+            </summary>
+            <returns>An awaitable task</returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.AuthenticateAsync(System.String,System.String,Gfycat.RequestOptions)">
+            <summary>
+            Allows the owner of this client to log in with their username and password
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <param name="options">The options for this request</param>
+            <returns>An awaitable task</returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.GetTwitterRequestTokenAsync(Gfycat.RequestOptions)">
+            <summary>
+            Retrieves a Twitter request token for the Twitter Request token auth flow
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.AuthenticateAsync(Gfycat.TokenType,System.String,Gfycat.RequestOptions)">
+            <summary>
+            Allows authentication with either a facebook access token or facebook auth code
+            </summary>
+            <param name="type"></param>
+            <param name="token"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.AuthenticateAsync(Gfycat.TokenType,System.String,System.String,Gfycat.RequestOptions)">
+            <summary>
+            Authenticates using a browser auth code and redirect uri, twitter token and secret, or twitter token and verifier
+            </summary>
+            <param name="type">The type of the provided tokens</param>
+            <param name="tokenOrCode">A twitter token or browser auth code</param>
+            <param name="verifierSecretRedirectUri">A twitter secret, verifier, or browser redirect uri</param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.AuthenticateAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Authenticates using an given access token
+            </summary>
+            <param name="accessToken"></param>
+            <param name="options">Sets the options for this request</param>
+            <returns></returns>
+            <exception cref="T:Gfycat.GfycatException">If verifyToken is true, this will attempt to get the current user which will return 401 unauthorized if the access token is invalid</exception>
+        </member>
+        <member name="M:Gfycat.GfycatClient.GetUserExistsAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Returns a bool for whether or not a user account exists on that username
+            </summary>
+            <param name="username"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.SendPasswordResetEmailAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Sends a password reset email for the user with the specified username or email address
+            </summary>
+            <param name="usernameOrEmail"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.GetUserAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Tries to get the user with the given Id. If the user isn't found, this throws a <see cref="T:Gfycat.GfycatException"/>
+            </summary>
+            <param name="userId"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+            <exception cref="T:Gfycat.GfycatException"></exception>
+        </member>
+        <member name="M:Gfycat.GfycatClient.TryGetUserAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Tries to get the user with the given ID. If the user isn't found, this returns null
+            </summary>
+            <param name="userId"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.GetCurrentUserAsync(Gfycat.RequestOptions)">
+            <summary>
+            Attempts to get the current user
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.CreateAccountAsync(System.String,System.String,System.String,System.Boolean,Gfycat.RequestOptions)">
+            <summary>
+            Creates a new user account using the specified username, password, and email
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <param name="email"></param>
+            <param name="loginWhenComplete"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.CreateAccountAsync(System.String,Gfycat.AccountTokenType,System.String,System.String,System.String,System.Boolean,Gfycat.RequestOptions)">
+            <summary>
+            Creates a new account using the specified username, provider token, password, and email
+            </summary>
+            <param name="username"></param>
+            <param name="tokenType"></param>
+            <param name="token"></param>
+            <param name="password"></param>
+            <param name="email"></param>
+            <param name="loginWhenComplete"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.GetGfyAsync(System.String,System.Boolean,Gfycat.RequestOptions)">
+            <summary>
+            Gets info for a single Gfy
+            </summary>
+            <param name="gfycat"></param>
+            <param name="overrideInvalidNameDetection">Forces the method to fetch the specified gfy even if it's detected as an invalid gfy name</param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.IsValidGfyUrl(System.String,System.String@)">
+            <summary>
+            Returns whether the provided url string is a valid Gfycat url pointing to a valid gfy name
+            </summary>
+            <param name="gfycatUrl"></param>
+            <param name="gfyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.IsValidGfyName(System.String)">
+            <summary>
+            Checks whether the provided gfy name is valid
+            </summary>
+            <param name="gfyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.GetGfyFromUrlAsync(System.String,System.Boolean,Gfycat.RequestOptions)">
+            <summary>
+            Attempts to get info for a single Gfy using a url string. If the URI isn't in a valid format or the gfy does not exist, this returns null
+            </summary>
+            <param name="gfycatUrl">The gfycat url</param>
+            <param name="overrideInvalidNameDetection">Forces the method to fetch the specified gfy even if it's detected as an invalid gfy name</param>
+            <param name="options">Optional request parameters</param>
+            <returns>An awaitable task that returns a Gfy</returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.CreateGfyAsync(System.String,Gfycat.GfyCreationParameters,Gfycat.RequestOptions)">
+            <summary>
+            Creates a Gfy using a remote url and returns the Gfy status
+            </summary>
+            <param name="remoteUrl"></param>
+            <param name="parameters"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.GetGfyUploadStatusAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Retrieves the upload status of the specified gfy
+            </summary>
+            <param name="gfycat"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.CreateGfyAsync(System.IO.Stream,Gfycat.GfyCreationParameters,Gfycat.RequestOptions)">
+            <summary>
+            Creates a Gfycat using the specified stream and upload parameters
+            </summary>
+            <param name="data"></param>
+            <param name="parameters"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.GetTrendingGfysAsync(System.String,System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Retrieves trending gfys for the specified tag. If no tag is specified, the "Trending" tag is used
+            </summary>
+            <param name="count"></param>
+            <param name="tag"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.GetTrendingTagsAsync(Gfycat.RequestOptions)">
+            <summary>
+            Returns an enumerable of all trending tags
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.GetTrendingTagsPopulatedAsync(System.Int32,System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Retrieves trending tags populated with gfys
+            </summary>
+            <param name="tagCount"></param>
+            <param name="gfyCount"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.GetReactionGfysAsync(Gfycat.ReactionLanguage,System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Retrieves a feed of all reaction tag feeds in the specified language. The default language is english
+            </summary>
+            <param name="count"></param>
+            <param name="language"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.SearchAsync(System.String,System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Searches the Gfycat website using the provided search text
+            </summary>
+            <param name="searchText"></param>
+            <param name="count"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.GetTwitterRequestTokenUrl(System.String)">
+            <summary>
+            Formats a request token into a Twitter oauth url
+            </summary>
+            <param name="requestToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfycatClient.GetBrowserAuthUrl(System.String,System.String,System.Boolean)">
+            <summary>
+            Creates an authorization URL given a state and a redirect URI
+            </summary>
+            <param name="state"></param>
+            <param name="redirectUri"></param>
+            <param name="codeResponse">True to return a code response (for authorization response), false to return a token response (implicit authorization)</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.GfycatClientConfig">
+            <summary>
+            Defines a configuration for a <see cref="T:Gfycat.GfycatClient"/>
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfycatClientConfig.ApiVersion">
+            <summary>
+            Gets the Gfycat API version used by the client
+            </summary>
+        </member>
+        <member name="F:Gfycat.GfycatClientConfig.BaseUrl">
+            <summary>
+            Gets the base url for all requests made by the rest client
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfycatClientConfig.ClientId">
+            <summary>
+            Gets the client Id of this config
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfycatClientConfig.ClientSecret">
+            <summary>
+            Gets the client secret of this config
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfycatClientConfig.RestClient">
+            <summary>
+            Overrides the rest client for this Gfycat client
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfycatClientConfig.DefaultRetryMode">
+            <summary>
+            Sets the default retry mode for all requests, the default is <see cref="F:Gfycat.RetryMode.RetryFirst401"/>
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfycatClientConfig.DefaultTimeout">
+            <summary>
+            Sets the default timeout for all requests.
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfycatClientConfig.DefaultFeedItemCount">
+            <summary>
+            Sets the default number of items to fetch in each feed
+            </summary>
+        </member>
+        <member name="M:Gfycat.GfycatClientConfig.#ctor(System.String,System.String)">
+            <summary>
+            Constructs a <see cref="T:Gfycat.GfycatClientConfig"/> using the specified client Id and client secret
+            </summary>
+            <param name="clientId"></param>
+            <param name="clientSecret"></param>
+        </member>
+        <member name="T:Gfycat.GfycatOperation">
+            <summary>
+            Specifies an operation to modify a part of the current user's setting. See "http://developers.gfycat.com/api/#updating-user-39-s-details" for details on valid operation combinations
+            </summary>
+            <remarks>See http://developers.gfycat.com/api/#updating-user-39-s-details for details on valid operations</remarks>
+        </member>
+        <member name="M:Gfycat.GfycatOperation.#ctor(Gfycat.Operation,Gfycat.OperationPath,System.Object)">
+            <summary>
+            Constructs a new operation with the given operation, path, and value
+            </summary>
+            <param name="op"></param>
+            <param name="path"></param>
+            <param name="value"></param>
+        </member>
+        <member name="P:Gfycat.GfycatOperation.Operation">
+            <summary>
+            Sets the operation to perform on the specified path
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfycatOperation.Path">
+            <summary>
+            The item to edit in this operation
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfycatOperation.Value">
+            <summary>
+            The new value for this operation
+            </summary>
+        </member>
+        <member name="T:Gfycat.GfyCreationParameters">
+            <summary>
+            Represents creation parameters for gfys
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyCreationParameters.Title">
+            <summary>
+            Sets the title of this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyCreationParameters.Description">
+            <summary>
+            Sets the description of this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyCreationParameters.Tags">
+            <summary>
+            Sets the tags of this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyCreationParameters.NoMd5">
+            <summary>
+            Instructs the uploader to skip the file duplication check
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyCreationParameters.Private">
+            <summary>
+            Sets whether this gfy will be private
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyCreationParameters.Nsfw">
+            <summary>
+            Sets whether this gfy will be not safe for work
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyCreationParameters.FetchSeconds">
+            <summary>
+            Sets the number of seconds into the video at the specified url to start reading
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyCreationParameters.FetchMinutes">
+            <summary>
+            Sets the number of minutes into the video at the specified url to start reading
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyCreationParameters.FetchHours">
+            <summary>
+            Sets the number of hours into the video at the specified url to start reading
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyCreationParameters.Captions">
+            <summary>
+            Sets the list of captions to apply to this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyCreationParameters.Cut">
+            <summary>
+            Sets the cut of this gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyCreationParameters.Crop">
+            <summary>
+            Sets the crop of this gfy
+            </summary>
+        </member>
+        <member name="M:Gfycat.GfyCreationParameters.#ctor(System.String,System.String,System.Boolean,Gfycat.NsfwSetting)">
+            <summary>
+            Constructs new creation parameters using the specified title, description, privacy setting, and nsfw setting
+            </summary>
+            <param name="title"></param>
+            <param name="description"></param>
+            <param name="isPrivate"></param>
+            <param name="isNsfw"></param>
+        </member>
+        <member name="T:Gfycat.Caption">
+            <summary>
+            Represents a gfy caption
+            </summary>
+        </member>
+        <member name="P:Gfycat.Caption.Text">
+            <summary>
+            Sets the text for this caption
+            </summary>
+        </member>
+        <member name="P:Gfycat.Caption.StartSeconds">
+            <summary>
+            Sets the seconds for this caption to start at
+            </summary>
+        </member>
+        <member name="P:Gfycat.Caption.Duration">
+            <summary>
+            Sets the duration for this caption in seconds
+            </summary>
+        </member>
+        <member name="P:Gfycat.Caption.FontHeight">
+            <summary>
+            Sets the font height of this caption
+            </summary>
+        </member>
+        <member name="P:Gfycat.Caption.XPosition">
+            <summary>
+            Sets the X position of this caption
+            </summary>
+        </member>
+        <member name="P:Gfycat.Caption.YPosition">
+            <summary>
+            Sets the Y position of this caption
+            </summary>
+        </member>
+        <member name="P:Gfycat.Caption.RelativeFontHeight">
+            <summary>
+            Sets the relative font height of this caption
+            </summary>
+        </member>
+        <member name="P:Gfycat.Caption.RelativeXPosition">
+            <summary>
+            Sets the relative X position of this caption
+            </summary>
+        </member>
+        <member name="P:Gfycat.Caption.RelativeYPosition">
+            <summary>
+            Sets the relative Y position of this caption
+            </summary>
+        </member>
+        <member name="M:Gfycat.Caption.#ctor(System.String)">
+            <summary>
+            Creates a new caption using the specified text
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="T:Gfycat.Cut">
+            <summary>
+            Represents a cut in a video or gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Cut.Duration">
+            <summary>
+            Sets the duration of this cut in seconds
+            </summary>
+        </member>
+        <member name="P:Gfycat.Cut.Start">
+            <summary>
+            Sets the start time of the duration of this cut in seconds
+            </summary>
+        </member>
+        <member name="M:Gfycat.Cut.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new cut using the specified start time and duration
+            </summary>
+            <param name="start"></param>
+            <param name="duration"></param>
+        </member>
+        <member name="T:Gfycat.Crop">
+            <summary>
+            Represents an image crop for a gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.Crop.XPosition">
+            <summary>
+            Sets the X position for this crop
+            </summary>
+        </member>
+        <member name="P:Gfycat.Crop.YPosition">
+            <summary>
+            Sets the Y position for this crop
+            </summary>
+        </member>
+        <member name="P:Gfycat.Crop.Width">
+            <summary>
+            Sets the width of this crop
+            </summary>
+        </member>
+        <member name="P:Gfycat.Crop.Height">
+            <summary>
+            Sets the height of this crop
+            </summary>
+        </member>
+        <member name="M:Gfycat.Crop.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new crop using the specified X position, Y position, width, and height
+            </summary>
+            <param name="xpos"></param>
+            <param name="ypos"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="T:Gfycat.GfyFeed">
+            <summary>
+            Represents a basic gfy feed
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyFeed.Content">
+            <summary>
+            Contains the current page of content for this feed
+            </summary>
+        </member>
+        <member name="M:Gfycat.GfyFeed.GetNextPageAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Returns the next page of this feed
+            </summary>
+            <param name="count">The number of gfys to get in this request</param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfyFeed.GetEnumerator">
+            <summary>
+            Returns an enumerator to enumerate through this feed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.GfyStatus">
+            <summary>
+            Represents a Gfy's upload status
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyStatus.Task">
+            <summary>
+            The current upload task of the gfy
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyStatus.Time">
+            <summary>
+            The current time remaining in seconds
+            </summary>
+        </member>
+        <member name="P:Gfycat.GfyStatus.GfyName">
+            <summary>
+            The current gfy name for getting the current status
+            </summary>
+        </member>
+        <member name="M:Gfycat.GfyStatus.UpdateAsync(Gfycat.RequestOptions)">
+            <summary>
+            Updates gfy's upload status
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.GfyStatus.GetGfyAsync(Gfycat.RequestOptions)">
+            <summary>
+            Gets the <see cref="T:Gfycat.Gfy"/> this status is checking if it's upload task is complete
+            </summary>
+            <param name="options"></param>
+            <returns>An awaitable <see cref="T:Gfycat.Gfy"/></returns>
+            <exception cref="T:System.InvalidOperationException">If the gfy's upload task isn't set to complete, running this method will be an invalid operation</exception>
+        </member>
+        <member name="M:Gfycat.GfyStatus.GetGfyWhenCompleteAsync(Gfycat.RequestOptions)">
+            <summary>
+            Waits for the gfy to finish uploading and retrieves it when it's done. This task is long running.
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.IAlbumInfo">
+            <summary>
+            Defines an album's basic information
+            </summary>
+        </member>
+        <member name="P:Gfycat.IAlbumInfo.Subfolders">
+            <summary>
+            Gets all folders inside this folder
+            </summary>
+        </member>
+        <member name="P:Gfycat.IAlbumInfo.Published">
+            <summary>
+            Gets whether this album is published or not
+            </summary>
+        </member>
+        <member name="T:Gfycat.IFeed`1">
+            <summary>
+            Represents a page in a feed of content from Gfycat
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Gfycat.IFeed`1.Content">
+            <summary>
+            Contains the current page of content for this feed
+            </summary>
+        </member>
+        <member name="P:Gfycat.IFeed`1.Cursor">
+            <summary>
+            The cursor used to get the next feed
+            </summary>
+        </member>
+        <member name="M:Gfycat.IFeed`1.GetNextPageAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Returns the next page of this feed
+            </summary>
+            <param name="count">The number of items to get in this request</param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.IFolder">
+            <summary>
+            Defines a basic Gfycat folder with an id and title
+            </summary>
+        </member>
+        <member name="P:Gfycat.IFolder.Id">
+            <summary>
+            Gets the id of this Gfycat folder
+            </summary>
+        </member>
+        <member name="P:Gfycat.IFolder.Title">
+            <summary>
+            Gets the title of this Gfycat folder
+            </summary>
+        </member>
+        <member name="M:Gfycat.IFolder.ModifyTitleAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Changes the title of this folder to the provided string
+            </summary>
+            <param name="newTitle"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.IFolder.DeleteAsync(Gfycat.RequestOptions)">
+            <summary>
+            Deletes this folder on Gfycat
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.IFolderContent">
+            <summary>
+            Defines a folder's content
+            </summary>
+        </member>
+        <member name="P:Gfycat.IFolderContent.Count">
+            <summary>
+            Gets the number of gfys in this folder
+            </summary>
+        </member>
+        <member name="P:Gfycat.IFolderContent.Content">
+            <summary>
+            Gets the content of this folder
+            </summary>
+        </member>
+        <member name="M:Gfycat.IFolderContent.MoveGfysAsync(Gfycat.IFolderContent,System.Collections.Generic.IEnumerable{Gfycat.Gfy},Gfycat.RequestOptions)">
+            <summary>
+            Moves the specified gfys to another folder
+            </summary>
+            <param name="folderToMoveTo"></param>
+            <param name="gfysToMove"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.IFolderInfo">
+            <summary>
+            Defines a folder with basic information in a folder tree
+            </summary>
+        </member>
+        <member name="P:Gfycat.IFolderInfo.Subfolders">
+            <summary>
+            Gets all folders inside this folder
+            </summary>
+        </member>
+        <member name="M:Gfycat.IFolderInfo.GetContentsAsync(Gfycat.RequestOptions)">
+            <summary>
+            Gets the contents of this folder
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.IFolderInfo.MoveFolderAsync(Gfycat.IFolderInfo,Gfycat.RequestOptions)">
+            <summary>
+            Moves this folder to somewhere else in the folder tree
+            </summary>
+            <param name="parent"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.IFolderInfo.CreateNewFolderAsync(System.String,Gfycat.RequestOptions)">
+            <summary>
+            Creates a new folder inside this folder
+            </summary>
+            <param name="folderName"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.InternalServerException">
+            <summary>
+            Represents an internal Gfycat server error with message, type, and stack trace
+            </summary>
+        </member>
+        <member name="T:Gfycat.InvalidResourceException">
+            <summary>
+            Represents the error that occurs when requesting a non-existing method/resource with a valid token
+            </summary>
+        </member>
+        <member name="T:Gfycat.ISearchable">
+            <summary>
+            Exposes a search method for searching the gfycat website or the current user
+            </summary>
+        </member>
+        <member name="M:Gfycat.ISearchable.SearchAsync(System.String,System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Searches this type
+            </summary>
+            <param name="count"></param>
+            <param name="searchText"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.IUpdatable">
+            <summary>
+            Represents an object which can be updated with information from gfycat
+            </summary>
+        </member>
+        <member name="M:Gfycat.IUpdatable.UpdateAsync(Gfycat.RequestOptions)">
+            <summary>
+            Updates the object with the most recent data from gfycat
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.IUser">
+            <summary>
+            Represents a basic Gfycat user
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.Username">
+            <summary>
+            The username of this user
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.Description">
+            <summary>
+            The description of this user
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.ProfileUrl">
+            <summary>
+            Gets the URL provided on the user's profile
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.Name">
+            <summary>
+            Gets this user's name provided on their profile
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.Views">
+            <summary>
+            Gets the total number of Gfy views this user has recieved
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.Url">
+            <summary>
+            Gets a browser friendly URL to this user's profile
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.CreationDate">
+            <summary>
+            Gets the date and time of this user's account creation
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.ProfileImageUrl">
+            <summary>
+            Gets this user's profile image url
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.Verified">
+            <summary>
+            Gets whether this user is verified
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.Followers">
+            <summary>
+            Gets the number of users following this user
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.Following">
+            <summary>
+            Gets the number of users this user is following
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.IframeProfileImageVisible">
+            <summary>
+            Gets the user’s profile image visibility on the iframe
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.PublishedGfys">
+            <summary>
+            Gets the number of Gfys this user has published on their account
+            </summary>
+        </member>
+        <member name="P:Gfycat.IUser.PublishedAlbums">
+            <summary>
+            Gets the number of albums this user had published on their account
+            </summary>
+        </member>
+        <member name="M:Gfycat.IUser.GetAlbumsAsync(Gfycat.RequestOptions)">
+            <summary>
+            Gets the albums of this user
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.IUser.GetGfyFeedAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Gets the feed of gfys for this user
+            </summary>
+            <param name="count"></param>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.IUser.FollowAsync(Gfycat.RequestOptions)">
+            <summary>
+            Follows this user
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.IUser.UnfollowAsync(Gfycat.RequestOptions)">
+            <summary>
+            Unfollows this user
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.IUser.GetFollowingUser(Gfycat.RequestOptions)">
+            <summary>
+            Gets if the current user is following this user
+            </summary>
+            <param name="options">The options for this request</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.PopulatedTagFeed">
+            <summary>
+            Represents a feed of <see cref="T:Gfycat.TaggedGfyFeed"/>s
+            </summary>
+        </member>
+        <member name="P:Gfycat.PopulatedTagFeed.Content">
+            <summary>
+            Contains the current page of content for this feed
+            </summary>
+        </member>
+        <member name="M:Gfycat.PopulatedTagFeed.GetEnumerator">
+            <summary>
+            Returns an enumerator to enumerate through this feed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.PopulatedTagFeed.GetNextPageAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Returns the next page of this feed
+            </summary>
+            <param name="count"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.ReactionFeed">
+            <summary>
+            Represents a collection of gfys based on a particular reaction
+            </summary>
+        </member>
+        <member name="P:Gfycat.ReactionFeed.CoverGfy">
+            <summary>
+            Gets the cover gfy of this reaction feed
+            </summary>
+        </member>
+        <member name="P:Gfycat.ReactionFeed.Tag">
+            <summary>
+            Gets the tag of this reaction feed
+            </summary>
+        </member>
+        <member name="M:Gfycat.ReactionFeed.GetEnumerator">
+            <summary>
+            Returns an enumerator to enumerate through this feed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.ReactionFeed.GetNextPageAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Returns the next page of this feed
+            </summary>
+            <param name="count"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.ReactionTagsFeed">
+            <summary>
+            Represents a collection of reaction feeds from Gfycat
+            </summary>
+        </member>
+        <member name="P:Gfycat.ReactionTagsFeed.Content">
+            <summary>
+            The content on the current page of this feed
+            </summary>
+        </member>
+        <member name="M:Gfycat.ReactionTagsFeed.GetEnumerator">
+            <summary>
+            Returns an enumerator to enumerate through this feed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.ReactionTagsFeed.GetNextPageAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Returns the next page of this feed
+            </summary>
+            <param name="count"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.Rest.IRestClient">
+            <summary>
+            Represents an abstract REST client for all Gfycat requests
+            </summary>
+        </member>
+        <member name="M:Gfycat.Rest.IRestClient.SetHeader(System.String,System.String)">
+            <summary>
+            Sets the value of a header key in the default request headers
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Gfycat.Rest.IRestClient.SendAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sends a request to the given endpoint
+            </summary>
+            <param name="method"></param>
+            <param name="endpoint"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Rest.IRestClient.SendAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sends a request with json content to the given endpoint
+            </summary>
+            <param name="method"></param>
+            <param name="endpoint"></param>
+            <param name="json"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Rest.IRestClient.SendAsync(System.String,System.String,System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>
+            Sends a request with stream content to the given endpoint
+            </summary>
+            <param name="method"></param>
+            <param name="endpoint"></param>
+            <param name="stream"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.Rest.IRestClient.SendAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+            Sends a request with multipart content to the given endpoint
+            </summary>
+            <param name="method"></param>
+            <param name="endpoint"></param>
+            <param name="multipart"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.Rest.RestResponse">
+            <summary>
+            Represents a response from a REST endpoint
+            </summary>
+        </member>
+        <member name="P:Gfycat.Rest.RestResponse.Status">
+            <summary>
+            The status returned from the endpoint
+            </summary>
+        </member>
+        <member name="P:Gfycat.Rest.RestResponse.Headers">
+            <summary>
+            The headers returned from the endpoint
+            </summary>
+        </member>
+        <member name="P:Gfycat.Rest.RestResponse.Content">
+            <summary>
+            The content returned from the endpoint
+            </summary>
+        </member>
+        <member name="P:Gfycat.Rest.RestResponse.RequestMethod">
+            <summary>
+            The method used in the request to the endpoint
+            </summary>
+        </member>
+        <member name="P:Gfycat.Rest.RestResponse.RequestUri">
+            <summary>
+            The URI endpoint used in the request
+            </summary>
+        </member>
+        <member name="M:Gfycat.Rest.RestResponse.#ctor(System.Net.HttpStatusCode,System.Collections.Generic.Dictionary{System.String,System.String},System.Net.Http.HttpContent,System.Net.Http.HttpMethod,System.Uri)">
+            <summary>
+            Creates a new <see cref="T:Gfycat.Rest.RestResponse"/> with the specified status, headers, content, method, and request URI
+            </summary>
+            <param name="status"></param>
+            <param name="headers"></param>
+            <param name="content"></param>
+            <param name="method"></param>
+            <param name="requestUri"></param>
+        </member>
+        <member name="T:Gfycat.RequestOptions">
+            <summary>
+            Specifies options for this REST request
+            </summary>
+        </member>
+        <member name="P:Gfycat.RequestOptions.Timeout">
+            <summary>
+            Sets the timeout for this request
+            </summary>
+        </member>
+        <member name="P:Gfycat.RequestOptions.CancellationToken">
+            <summary>
+            Sets the cancellation token for this request
+            </summary>
+        </member>
+        <member name="P:Gfycat.RequestOptions.RetryMode">
+            <summary>
+            Sets the retry mode of this request
+            </summary>
+        </member>
+        <member name="T:Gfycat.RetryMode">
+            <summary>
+            Specifies retry modes for requests in the event they fail for any particular reason
+            </summary>
+        </member>
+        <member name="F:Gfycat.RetryMode.AlwaysFail">
+            <summary>
+            All responses don't retry
+            </summary>
+        </member>
+        <member name="F:Gfycat.RetryMode.RetryTimeouts">
+            <summary>
+            In the event of a task timeout, the request is attempted again
+            </summary>
+        </member>
+        <member name="F:Gfycat.RetryMode.Retry502">
+            <summary>
+            In the event of 502 (Bad Gateway), the request is attempted again
+            </summary>
+        </member>
+        <member name="F:Gfycat.RetryMode.RetryFirst401">
+            <summary>
+            In the event of 401, this will refresh the access token if possible and retry the request. If that request fails, an exception is thrown
+            </summary>
+        </member>
+        <member name="F:Gfycat.RetryMode.AlwaysRetry">
+            <summary>
+            Retries the request if it times out, if it has a bad gateway, and on the first 401
+            </summary>
+        </member>
+        <member name="T:Gfycat.SearchFeed">
+            <summary>
+            Represents a search feed with a given count
+            </summary>
+        </member>
+        <member name="P:Gfycat.SearchFeed.SearchText">
+            <summary>
+            Gets the search text of this feed
+            </summary>
+        </member>
+        <member name="P:Gfycat.SearchFeed.Count">
+            <summary>
+            Gets the total number of Gfys found in the search
+            </summary>
+        </member>
+        <member name="M:Gfycat.SiteSearchFeed.GetEnumerator">
+            <summary>
+            Returns an enumerator to enumerate through this feed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.SiteSearchFeed.GetNextPageAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Returns the next page of this feed
+            </summary>
+            <param name="count"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.TaggedGfyFeed">
+            <summary>
+            A feed of popular <see cref="T:Gfycat.Gfy"/>s which share a tag
+            </summary>
+        </member>
+        <member name="P:Gfycat.TaggedGfyFeed.Tag">
+            <summary>
+            Gets the tag of this feed
+            </summary>
+        </member>
+        <member name="M:Gfycat.TaggedGfyFeed.GetEnumerator">
+            <summary>
+            Returns an enumerator to enumerate through this feed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.TaggedGfyFeed.GetNextPageAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Returns the next page of this gfy feed
+            </summary>
+            <param name="count"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gfycat.UploadTask">
+            <summary>
+            Reprsents an gfy upload's current task
+            </summary>
+        </member>
+        <member name="F:Gfycat.UploadTask.Invalid">
+            <summary>
+            Represents an invalid upload task
+            </summary>
+        </member>
+        <member name="F:Gfycat.UploadTask.NotFoundo">
+            <summary>
+            Represents an upload that doesn't exist
+            </summary>
+        </member>
+        <member name="F:Gfycat.UploadTask.Encoding">
+            <summary>
+            Represents an upload that is encoding
+            </summary>
+        </member>
+        <member name="F:Gfycat.UploadTask.Error">
+            <summary>
+            Represents an upload which has encountered an error
+            </summary>
+        </member>
+        <member name="F:Gfycat.UploadTask.Complete">
+            <summary>
+            Represents an upload which is complete
+            </summary>
+        </member>
+        <member name="T:Gfycat.User">
+            <summary>
+            Represents a user on Gfycat
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.Username">
+            <summary>
+            The username of this user
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.Description">
+            <summary>
+            The description of this user
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.ProfileUrl">
+            <summary>
+            Gets the URL provided on the user's profile
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.Name">
+            <summary>
+            Gets this user's name provided on their profile
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.Views">
+            <summary>
+            Gets the total number of Gfy views this user has recieved
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.Url">
+            <summary>
+            Gets a browser friendly URL to this user's profile
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.CreationDate">
+            <summary>
+            Gets the date and time of this user's account creation
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.ProfileImageUrl">
+            <summary>
+            Gets this user's profile image url
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.Verified">
+            <summary>
+            Gets whether this user is verified
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.Followers">
+            <summary>
+            Gets the number of users following this user
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.Following">
+            <summary>
+            Gets the number of users this user is following
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.IframeProfileImageVisible">
+            <summary>
+            Gets the user’s profile image visibility on the iframe
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.PublishedGfys">
+            <summary>
+            Gets the number of Gfys this user has published on their account
+            </summary>
+        </member>
+        <member name="P:Gfycat.User.PublishedAlbums">
+            <summary>
+            Gets the number of albums this user had published on their account
+            </summary>
+        </member>
+        <member name="M:Gfycat.User.UpdateAsync(Gfycat.RequestOptions)">
+            <summary>
+            Updates this object with the latest server information
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.User.GetAlbumsAsync(Gfycat.RequestOptions)">
+            <summary>
+            Returns all public albums for this user
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.User.GetGfyFeedAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Returns the public gfy feed for this user
+            </summary>
+            <param name="count"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.User.FollowAsync(Gfycat.RequestOptions)">
+            <summary>
+            Follows this user
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.User.UnfollowAsync(Gfycat.RequestOptions)">
+            <summary>
+            Unfollows this user
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.User.GetFollowingUser(Gfycat.RequestOptions)">
+            <summary>
+            Gets whether the current user is following this user
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.UserGfyFeed.GetEnumerator">
+            <summary>
+            Returns an enumerator to enumerate through this feed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gfycat.UserGfyFeed.GetNextPageAsync(System.Int32,Gfycat.RequestOptions)">
+            <summary>
+            Returns the next page of this feed
+            </summary>
+            <param name="count"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
